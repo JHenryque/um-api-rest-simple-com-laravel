@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "41cd49d9-68f0-41e7-b360-df585e4caccd",
+		"name": "laravel_simples_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47105331",
+		"_collection_link": "https://jhenryque-1338898.postman.co/workspace/Jos%C3%A9-Henryque's-Workspace~05b8c6b3-ff46-43c9-8613-a64251ebfcdb/collection/47105331-41cd49d9-68f0-41e7-b360-df585e4caccd?action=share&source=collection_link&creator=47105331"
+	},
+	"item": [
+		{
+			"name": "[01] Status",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "[02] Clients",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "[03] Client by ID (GET)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://laravel_simple_api.test/api/client-by-id/2",
+					"protocol": "http",
+					"host": [
+						"laravel_simple_api",
+						"test"
+					],
+					"path": [
+						"api",
+						"client-by-id",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[04] Client (POST)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": 101\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://laravel_simple_api.test/api/client",
+					"protocol": "http",
+					"host": [
+						"laravel_simple_api",
+						"test"
+					],
+					"path": [
+						"api",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[05] Add new client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"José\",\r\n    \"email\": \"jose@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://laravel_simple_api.test/api/add-client",
+					"protocol": "http",
+					"host": [
+						"laravel_simple_api",
+						"test"
+					],
+					"path": [
+						"api",
+						"add-client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[06] Update client",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 10,\r\n    \"name\": \"José\",\r\n    \"email\": \"jose@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://laravel_simple_api.test/api/update-client",
+					"protocol": "http",
+					"host": [
+						"laravel_simple_api",
+						"test"
+					],
+					"path": [
+						"api",
+						"update-client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[07] Delete client",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 10,\r\n    \"name\": \"José\",\r\n    \"email\": \"jose@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://laravel_simple_api.test/api/delete-client?id=10",
+					"protocol": "http",
+					"host": [
+						"laravel_simple_api",
+						"test"
+					],
+					"path": [
+						"api",
+						"delete-client"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
