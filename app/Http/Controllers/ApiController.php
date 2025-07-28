@@ -38,7 +38,7 @@ class ApiController extends Controller
     public function client(Request $request)
     {
         // ckeck if id is provided
-        if ($request->id) {
+        if (!$request->id) {
             return response()->json([
                 'status' => 'Error',
                 'message' => 'Client Id is invalid',
@@ -57,6 +57,29 @@ class ApiController extends Controller
     {
         // create a new client
         $client = new Client();
+        $client->name = $request->name;
+        $client->email = $request->email;
+        $client->save();
+
+        return response()->json([
+            'status' => 'OK',
+            'message' => 'success',
+            'data' => $client
+        ],200);
+    }
+
+    public function updateClient(Request $request)
+    {
+        //  check if id is provided
+        if (!$request->id) {
+            return response()->json([
+                'status' => 'Error',
+                'message' => 'Client Id is invalid',
+            ],400);
+        }
+
+        // update client
+        $client = Client::find($request->id);
         $client->name = $request->name;
         $client->email = $request->email;
         $client->save();
