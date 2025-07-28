@@ -90,4 +90,15 @@ class ApiController extends Controller
             'data' => $client
         ],200);
     }
+
+    public function deleteClient($id)
+    {
+        $client = Client::find($id);
+        $client->delete();
+
+        return response()->json([
+            'status' => 'OK',
+            'message' => 'success',
+        ],200);
+    }
 }
